@@ -25,7 +25,6 @@ document.getElementById('candle-circle')?.addEventListener('click', toggleCandle
 document.getElementById('resetButton')?.addEventListener('click', resetElements);
 
 function toggleCandle() {
-    console.log("toggleCandle");
     //toggle one candle at a time
     var shapes = document.querySelectorAll('.shapes');
     if (shapes && current < numberOfElement.length) {
@@ -39,7 +38,6 @@ function toggleCandle() {
 
 function toggleIndividualCandle(event) {
     event.stopPropagation(); //prevent from propagating to circle
-    console.log(event.srcElement);
     event.srcElement.classList.toggle('off');
 }
 
