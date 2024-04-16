@@ -26,11 +26,9 @@ document.getElementById('candle-circle')?.addEventListener('click', toggleCandle
 document.getElementById('resetButton')?.addEventListener('click', resetElements);
 
 function toggleCandle() {
-    //remove one candle at a time
+    //toggle one candle at a time
     var shapes = document.querySelectorAll('.shapes');
     if (shapes && current < numberOfElement.length) {
-        console.log(current);
-        console.log(shapes[current]);
         shapes[current].classList.add('off');
         current++;
     }
