@@ -16,7 +16,9 @@ function generateHtml() {
     current = 0;
     var angles = renderAngle(numberOfElement);
     angles.forEach(function (item, index) {
-        html += `<div class="shapes" style="--deg:${item}deg;"></div>`;
+        html += `<div class="shapes" style="--deg:${item}deg;">
+            <img src="assets/images/flame.gif" width="200" height="200">
+        </div>`;
     });
     document.querySelector('.circle').innerHTML = html;
     document.querySelectorAll('.shapes')?.forEach(shape => shape.addEventListener('click', toggleIndividualCandle));
