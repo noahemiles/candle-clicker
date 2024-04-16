@@ -4,7 +4,7 @@ function renderAngle(data) {
     var angles = [];
     var totalElements = data.length;
     var angleIncrement = 360 / totalElements; // Calculate angle increment dynamically
-    var offset = 4; //clocks
+    var offset = 5; //clocks
     for (var i = 1 + offset; i <= totalElements + offset; i++) {
         angles.push(i * angleIncrement);
     }
@@ -47,6 +47,8 @@ function toggleIndividualCandle(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === '9') {
         resetElements();
+    } else if (event.key === '8') {
+        toggleCandle();
     }
 });
 
