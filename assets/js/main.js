@@ -6,7 +6,8 @@ function renderAngle(data) {
     var angles = [];
     var totalElements = data.length;
     var angleIncrement = 360 / totalElements; // Calculate angle increment dynamically
-    for (var i = 1; i <= totalElements; i++) {
+    var offset = 4; //clocks
+    for (var i = 1 + offset; i <= totalElements + offset; i++) {
       angles.push(i * angleIncrement);
     }
     return angles;
