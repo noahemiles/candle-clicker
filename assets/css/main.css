@@ -10,7 +10,7 @@ body {
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: 1px solid white;
     color: white;
     padding: 15px 32px;
@@ -21,7 +21,6 @@ body {
     cursor: pointer;
     border-radius: 10px;
 }
-
 
 .secondary {
     display: flex;
@@ -35,7 +34,6 @@ body {
     background: red;
 }
 
-/* https://stackoverflow.com/questions/50505426/position-multiple-div-elements-around-the-circle-like-clock */
 .main {
     display: flex;
     justify-content: center;
@@ -59,5 +57,3 @@ body {
     background: green;
     transform: rotate(var(--deg)) translate(-50%, 104px);
 }
-
-/* END */
