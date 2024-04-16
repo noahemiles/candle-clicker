@@ -17,7 +17,7 @@ function generateHtml() {
     var angles = renderAngle(numberOfElement);
     angles.forEach(function (item, index) {
         html += `<div class="shapes" style="--deg:${item}deg;">
-            <img src="assets/images/flame.gif" width="200" height="200">
+            <img src="assets/images/flame.gif">
         </div>`;
     });
     document.querySelector('.circle').innerHTML = html;
