@@ -21,18 +21,30 @@ function generateHtml() {
     html += `<div class="shapes" style="--deg:${item}deg;"></div>`;
   });
   document.querySelector('.circle').innerHTML = html;
+  document.querySelectorAll('.shapes')?.forEach(shape => shape.addEventListener('click', toggleIndividualCandle));
 }
 document.getElementById('candle-circle')?.addEventListener('click', toggleCandle);
 document.getElementById('resetButton')?.addEventListener('click', resetElements);
 
 function toggleCandle() {
+    console.log("toggleCandle");
     //toggle one candle at a time
     var shapes = document.querySelectorAll('.shapes');
     if (shapes && current < numberOfElement.length) {
-        shapes[current].classList.add('off');
+        shapes[current].classList.toggle('off');
         current++;
+    } else {
+        current = 0;
+        toggleCandle();
     }
 }
+
+function toggleIndividualCandle(event) {
+    event.stopPropagation(); //prevent from propagating to circle
+    console.log(event.srcElement);
+    event.srcElement.classList.toggle('off');
+}
+
 function resetElements() {
     generateHtml();
 }
