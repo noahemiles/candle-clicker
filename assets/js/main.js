@@ -38,8 +38,15 @@ function toggleCandle() {
 
 function toggleIndividualCandle(event) {
     event.stopPropagation(); //prevent from propagating to circle
-    event.srcElement.classList.toggle('off');
+    var src = event.srcElement;
+    src.closest('.shapes').classList.toggle('off');
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === '9') {
+        resetElements();
+    }
+});
 
 function resetElements() {
     generateHtml();
