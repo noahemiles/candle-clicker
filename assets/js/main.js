@@ -17,7 +17,7 @@ function generateHtml() {
     var angles = renderAngle(numberOfElement);
     angles.forEach(function (item, index) {
         html += `<div class="shapes" style="--deg:${item}deg;">
-            <img src="assets/images/flame.gif">
+            <img src="assets/images/flame.gif" alt="DN">
         </div>`;
     });
     document.querySelector('.circle').innerHTML = html;
@@ -30,7 +30,8 @@ function toggleCandle() {
     //toggle one candle at a time
     var shapes = document.querySelectorAll('.shapes');
     if (shapes && current < numberOfElement.length) {
-        shapes[current].classList.toggle('off');
+        var shape = shapes[current];
+        woosh(shape);
         current++;
     } else {
         current = 0;
@@ -41,7 +42,20 @@ function toggleCandle() {
 function toggleIndividualCandle(event) {
     event.stopPropagation(); //prevent from propagating to circle
     var src = event.srcElement;
-    src.closest('.shapes').classList.toggle('off');
+    var shape = src.closest('.shapes');
+    shape.classList.toggle('off');
+    woosh(shape);
+}
+
+function woosh(shape) {
+    var gif = shape.children[0];
+    if (shape.classList.contains('off')) return;
+    shape.classList.toggle('off');
+    gif.src = "assets/images/woosh.gif";
+    gif.onload = null;
+    setTimeout(function() {
+        gif.src = "assets/images/burnout.gif";
+    }, .65 * 1000); // Set the timeout based on the duration of the GIF
 }
 
 document.addEventListener('keydown', function(event) {

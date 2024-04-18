@@ -5,15 +5,8 @@
 
 img {
     user-select: none;
-    width: 200px;
-    height: 200px;
-}
-
-@media only screen and (max-width: 767px) {
-    img {
-        width: 100px;
-        height: 100px;
-    }
+    width: 250px;
+    height: 250px;
 }
 
 html, body {
@@ -39,8 +32,8 @@ html, body {
 }
 
 .circle {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     position: relative;
 }
@@ -51,11 +44,36 @@ html, body {
     left: calc(50% - 3px);
     width: 5px;
     height: 5px;
-    transform: rotate(var(--deg)) translate(-50%, 104px);
+    transform: rotate(var(--deg)) translate(-50%, 204px);
     opacity: 1;
-    transition: opacity 1s ease-out;
 }
-
-.shapes.off {
-    opacity: 0;
+/** Tablet **/
+@media only screen and (max-width: 900px) {
+    .shapes {
+        transform: rotate(var(--deg)) translate(-50%, 184px);
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+/** Mobile **/
+@media only screen and (max-width: 768px) {
+    .shapes {
+        transform: rotate(var(--deg)) translate(-50%, 104px);
+    }
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+/** Small Mobile **/
+@media only screen and (max-width: 550px) {
+    .shapes {
+        transform: rotate(var(--deg)) translate(-50%, 104px);
+    }
+    img {
+        width: 100px;
+        height: 100px;
+    }
 }
