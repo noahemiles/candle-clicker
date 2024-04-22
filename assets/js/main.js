@@ -24,7 +24,7 @@ function generateHtml() {
     document.querySelectorAll('.shapes')?.forEach(shape => shape.addEventListener('click', toggleIndividualCandle));
 }
 document.getElementById('candle-circle')?.addEventListener('click', toggleCandle);
-document.getElementById('resetButton')?.addEventListener('click', resetElements);
+document.getElementById('candle-circle')?.addEventListener('dblclick', resetElements);
 
 function toggleCandle() {
     //toggle one candle at a time
